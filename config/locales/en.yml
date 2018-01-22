@@ -59,7 +59,14 @@ en:
            ```
 
            to strip out all punctuation before doing your other processing.
-    eight: You can find a formula for payment at the bottom of [this section](https://en.wikipedia.org/wiki/Mortgage_calculator#Monthly_payment_formula) on the Wikipedia article on Mortgage calculators. Remember to think about units — is our calculator thinking about basis points? Months? Years? Percentages? Cents? Dollars?
+    eight: |
+            You can find a formula for payment at the bottom of [this section](https://en.wikipedia.org/wiki/Mortgage_calculator#Monthly_payment_formula) on the Wikipedia article on Mortgage calculators. Remember to think about units — is our calculator thinking about basis points? Months? Years? Percentages? Cents? Dollars?
+
+            - Assume that the entered APR is a number beween 0 and 100
+
+            - Make sure to divide the APR by 12 to get the monthly interest rate, r. Also make sure to divide that value by 100 to express that monthly interest rate as a decimal.
+
+            - Make sure to convert years to months to get N, the number of monthly payments
     nine:  You can multiple and divide by `1.minute` rather than `60` if you like; Ruby encourages readable code.
     ten: You can multiple and divide by `1.hour` rather than `3600` if you like; Ruby encourages readable code.
     eleven: Look up how to calculate **population** variance, not _sample_ variance.
