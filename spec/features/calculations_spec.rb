@@ -227,7 +227,7 @@ RSpec.describe "Using", type: :feature do
       expect(page).to have_content "0.1430"
     end
 
-    it "displays the years between", points: 3 do
+    it "displays the years between", points: 3 do, hint: I18n.t("hints.eleven") do
       expect(page).to have_content "0.0027"
     end
   end
@@ -275,11 +275,11 @@ RSpec.describe "Using", type: :feature do
       expect(page).to have_css(".mean", text: 5.72)
     end
 
-    it "displays the variance of the numbers", points: 24, hint: I18n.t("hints.eleven") do
+    it "displays the variance of the numbers", points: 24, hint: I18n.t("hints.twelve") do
       expect(page).to have_css(".variance", text: 8.01)
     end
 
-    it "displays the standard deviation", points: 8, hint: I18n.t("hints.twelve") do
+    it "displays the standard deviation", points: 8, hint: I18n.t("hints.thirteen") do
       expect(page).to have_css(".standard_deviation", text: 2.83)
     end
 

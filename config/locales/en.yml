@@ -69,5 +69,6 @@ en:
             - Make sure to convert years to months to get N, the number of monthly payments
     nine:  You can multiple and divide by `1.minute` rather than `60` if you like; Ruby encourages readable code.
     ten: You can multiple and divide by `1.hour` rather than `3600` if you like; Ruby encourages readable code.
-    eleven: Look up how to calculate **population** variance, not _sample_ variance.
-    twelve: Look up how to calculate **population** standard deviation, not _sample_ standard deviation.
+    eleven: `1.year` gives you the number of seconds in a year; Ruby encourages readable code.
+    twelve: Look up how to calculate **population** variance, not _sample_ variance.
+    thirteen: Look up how to calculate **population** standard deviation, not _sample_ standard deviation.
