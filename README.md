@@ -14,8 +14,7 @@ It is a collection of calculators that do various things; count the number of wo
 
 ## Setup
 
- 1. [Setup the project on Cloud9 using this process.](https://guides.firstdraft.com/getting-started-with-cloud9.html)
- 1. Now paste the URL of your running application into a Chrome tab (or click the underlined URL that appears in the terminal when you run the project). If all went well, you should see the New Word Count form. **If not, let us know right away.**
+ 1. Start your server and navigate to the homepage.
  1. Type in some text and submit the form.
  1. On the results page, you will currently see just a bunch of placeholders. Your job will be to replace the placeholders with correctly computed values.
  1. In Atom, find the `/app/controllers/calculations_controller.rb` file.
