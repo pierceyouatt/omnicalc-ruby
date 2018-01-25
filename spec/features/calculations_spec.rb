@@ -227,7 +227,7 @@ RSpec.describe "Using", type: :feature do
       expect(page).to have_content "0.1430"
     end
 
-    it "displays the years between", points: 3 do, hint: I18n.t("hints.eleven") do
+    it "displays the years between", points: 3, hint: I18n.t("hints.eleven") do
       expect(page).to have_content "0.0027"
     end
   end
