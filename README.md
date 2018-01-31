@@ -14,10 +14,11 @@ It is a collection of calculators that do various things; count the number of wo
 
 ## Setup
 
- 1. Start your server and navigate to the homepage.
+ 1. Download this project to your Cloud9 workspace as usual; `git clone ...`, `cd omnicalc-ruby`, `bin/setup`, etc.
+ 1. Start your server with `bin/server`, Preview the live application, and navigate to the homepage.
  1. Type in some text and submit the form.
  1. On the results page, you will currently see just a bunch of placeholders. Your job will be to replace the placeholders with correctly computed values.
- 1. In Atom, find the `/app/controllers/calculations_controller.rb` file.
+ 1. In your Cloud9 editor, find the `/app/controllers/calculations_controller.rb` file.
  1. Locate the part of the file that looks like this:
 
         def word_count
