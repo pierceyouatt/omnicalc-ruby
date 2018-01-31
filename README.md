@@ -14,7 +14,7 @@ It is a collection of calculators that do various things; count the number of wo
 
 ## Setup
 
- 1. Download this project to your Cloud9 workspace as usual; `git clone ...`, `cd omnicalc-ruby`, `bin/setup`, etc.
+ 1. Download this project to your Cloud9 workspace as usual; `git clone ...`, `cd omnicalc-ruby`, `bin/setup`, etc. (This is also detailed in the [Getting Automated Feedback guide](https://guides.firstdraft.com/getting-automated-feedback.html).)
  1. Start your server with `bin/server`, Preview the live application, and navigate to the homepage.
  1. Type in some text and submit the form.
  1. On the results page, you will currently see just a bunch of placeholders. Your job will be to replace the placeholders with correctly computed values.
@@ -53,5 +53,5 @@ It is a collection of calculators that do various things; count the number of wo
  1. Some tasks are easier, some are much harder. For example, in the Descriptive Statistics calculator, finding the mode (the number that occurs most frequently in a list of numbers) is surprisingly hard. Do your best, but don't get discouraged if you can't quite solve it.
  1. The [Introduction to Ruby](https://guides.firstdraft.com/introduction-to-ruby.html) contains enough tools to solve all of the Omnicalc challenges. (You can build up almost anything from scratch given conditionals, loops, and variables.) You should attempt to solve it using the tools you've already seen.
  1. For the mode calculation, just worry about the simplest case; when there's one number that occurs most frequently, that should be shown as the mode. I won't be testing the case that there's a tie.
- 1. When you're ready for some automated feedback, run `rspec` in a Terminal tab. There will be a bunch of output; don't be intimidated! Try to read through it and make sense of it; ask questions on Piazza, and we'll discuss in detail next week.
+ 1. When you're ready for some automated feedback, [follow this guide](https://guides.firstdraft.com/getting-automated-feedback.html). You can run `rails grade:all` as many times as you like.
  1. Ask lots of questions!
