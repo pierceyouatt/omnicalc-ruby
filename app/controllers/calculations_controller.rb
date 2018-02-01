@@ -97,7 +97,7 @@ class CalculationsController < ApplicationController
     if @sorted_numbers.count.odd?
       @median = @sorted_numbers[@count/2]
     else
-      @media = (@sorted_numbers[@count/2]+@sorted_numbers[@count/2]+1)/2
+      @median = (@sorted_numbers[@count/2]+@sorted_numbers[@count/2]-1)/2
     end
 
     running_total = 0
@@ -119,12 +119,13 @@ class CalculationsController < ApplicationController
     end
     @variance = sum_of_squares/@count
 
-    @standard_deviation = @variance**2
+    @standard_deviation = (@variance**0.5)
 
     mode_count = 0
     temp_mode = 0
     @numbers.each do |current|
       if @numbers.count(current) > mode_count
+        mode_count = @numbers.count(current)
         temp_mode = current
       end
     end
