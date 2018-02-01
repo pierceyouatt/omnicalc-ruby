@@ -9,15 +9,17 @@ class CalculationsController < ApplicationController
     # The text the user input is in the string @text.
     # The special word the user input is in the string @special_word.
     # ================================================================================
+    def count_subs(string, substring)
+      string.scan(/(?=#{substring})/).count
+    end
 
+    @word_count = {@text.split(" ").count
 
-    @word_count = "Replace this string with your answer."
+    @character_count_with_spaces = @text.length
 
-    @character_count_with_spaces = "Replace this string with your answer."
+    @character_count_without_spaces = @text.gsub(" ","").length
 
-    @character_count_without_spaces = "Replace this string with your answer."
-
-    @occurrences = "Replace this string with your answer."
+    @occurrences = count_subs(@text.downcase,@special_word.downcase)
 
     # ================================================================================
     # Your code goes above.
@@ -38,7 +40,7 @@ class CalculationsController < ApplicationController
     # The principal value the user input is in the decimal @principal.
     # ================================================================================
 
-    @monthly_payment = "Replace this string with your answer."
+    @monthly_payment = (@ap/1200*@principal)/(1-((1+@apr/1200)**(-12*@years)))
 
     # ================================================================================
     # Your code goes above.
@@ -60,12 +62,12 @@ class CalculationsController < ApplicationController
     #   number of seconds as a result.
     # ================================================================================
 
-    @seconds = "Replace this string with your answer."
-    @minutes = "Replace this string with your answer."
-    @hours = "Replace this string with your answer."
-    @days = "Replace this string with your answer."
-    @weeks = "Replace this string with your answer."
-    @years = "Replace this string with your answer."
+    @seconds = @ending-@starting
+    @minutes = (@ending-@starting)/60
+    @hours = @minutes/60
+    @days = @hours/24
+    @weeks = @days/7
+    @years = @days/365
 
     # ================================================================================
     # Your code goes above.
@@ -82,27 +84,49 @@ class CalculationsController < ApplicationController
     # The numbers the user input are in the array @numbers.
     # ================================================================================
 
-    @sorted_numbers = "Replace this string with your answer."
+    @sorted_numbers = @numbers.sort
 
-    @count = "Replace this string with your answer."
+    @count = @numbers.count
 
-    @minimum = "Replace this string with your answer."
+    @minimum = @numbers.min
 
-    @maximum = "Replace this string with your answer."
+    @maximum = @numbers.max
 
-    @range = "Replace this string with your answer."
+    @range = @numbers.max-@numbers.min
 
-    @median = "Replace this string with your answer."
+    if @sorted_numbers.odd?
+      @median = @sorted_numbers[@count/2]
+    else
+      @media = (@sorted_numbers[@count/2]+@sorted_numbers[@count/2]+1)/2
+    end
 
-    @sum = "Replace this string with your answer."
+    running_total = 0
+    @numbers.each do |current|
+      running_total += current
+    end
+    @sum = running_total
 
-    @mean = "Replace this string with your answer."
+    @mean = @sum/@count
 
-    @variance = "Replace this string with your answer."
+    sq_differences = []
+    @numbers.each do |current|
+      sq_differences.push((current-@mean)**2)
+    end
 
-    @standard_deviation = "Replace this string with your answer."
+    sum_of_squares = 0
+    sq_differences.each do |current|
+      sum_of_squares += current
+    end
+    @variance = sum_of_squares/@count
 
-    @mode = "Replace this string with your answer."
+    @standard_deviation = @variance**2
+
+    mode_count = 0
+    @numbers.each do |current|
+      if @numbers.count(current) > mode_count
+        temp_mode = current
+      end
+    @mode = temp_mode
 
     # ================================================================================
     # Your code goes above.
