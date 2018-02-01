@@ -13,7 +13,7 @@ class CalculationsController < ApplicationController
       string.scan(/(?=#{substring})/).count
     end
 
-    @word_count = {@text.split(" ").count
+    @word_count = @text.split(" ").count
 
     @character_count_with_spaces = @text.length
 
@@ -40,7 +40,7 @@ class CalculationsController < ApplicationController
     # The principal value the user input is in the decimal @principal.
     # ================================================================================
 
-    @monthly_payment = (@ap/1200*@principal)/(1-((1+@apr/1200)**(-12*@years)))
+    @monthly_payment = (@apr/1200*@principal)/(1-((1+@apr/1200)**(-12*@years)))
 
     # ================================================================================
     # Your code goes above.
@@ -94,7 +94,7 @@ class CalculationsController < ApplicationController
 
     @range = @numbers.max-@numbers.min
 
-    if @sorted_numbers.odd?
+    if @sorted_numbers.count.odd?
       @median = @sorted_numbers[@count/2]
     else
       @media = (@sorted_numbers[@count/2]+@sorted_numbers[@count/2]+1)/2
@@ -122,10 +122,12 @@ class CalculationsController < ApplicationController
     @standard_deviation = @variance**2
 
     mode_count = 0
+    temp_mode = 0
     @numbers.each do |current|
       if @numbers.count(current) > mode_count
         temp_mode = current
       end
+    end
     @mode = temp_mode
 
     # ================================================================================
@@ -135,3 +137,4 @@ class CalculationsController < ApplicationController
     render("descriptive_statistics.html.erb")
   end
 end
+
